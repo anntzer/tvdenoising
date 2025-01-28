@@ -33,6 +33,7 @@ jobs:
         CIBW_ARCHS_MACOS: 'x86_64 universal2'
         CIBW_ARCHS_WINDOWS: 'AMD64'
         CIBW_TEST_COMMAND: python {project}/test_tvdenoising.py
+        CIBW_ENVIRONMENT: SETUPTOOLS_SCM_PRETEND_VERSION_FOR_TVDENOISING=0.0.1
     - uses: actions/upload-artifact@v4
       with:
         name: wheel-${{ matrix.os }}-${{ matrix.pytag }}
